@@ -10,15 +10,15 @@ class Config(object):
     
     OWNER_ID = int(os.environ.get("OWNER_ID", 1428968542))
 
-    START = str(os.environ.get("START_TEXT", ""))
+    START = str(os.environ.get("START_TEXT", "Bu botu kullanarak benimle iletişime geçebilirsin"))
 
-    HELP = str(os.environ.get("HELP_TEXT", ""))
+    HELP = str(os.environ.get("HELP_TEXT", "Faydalı linkler 🤙"))
 
     DONATE = str(os.environ.get("DONATE_TEXT", ""))
 
     DONATE_LINK = str(os.environ.get("DONATE_LINK", ""))
 
-    UPDATE_CHANNEL = str(os.environ.get("UPDATE_CHANNEL", ""))
+    UPDATE_CHANNEL = str(os.environ.get("UPDATE_CHANNEL", "https://muhendisherif.com/"))
 
-    SUPPORT_GROUP = str(os.environ.get("SUPPORT_GROUP", ""))
+    SUPPORT_GROUP = str(os.environ.get("SUPPORT_GROUP", "https://discord.com/invite/grovestreet07"))
 
