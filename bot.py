@@ -43,11 +43,11 @@ donate_link=C.DONATE_LINK
 
 owner_id=C.OWNER_ID
 
-LOG_TEXT = "ID: <code>{}</code>\nFirst Name: <a href='tg://user?id={}'>{}{}</a>\nDC ID: <code>{}</code>"
+LOG_TEXT = "ID: <code>{}</code>\nİsim: <a href='tg://user?id={}'>{}{}</a>\nDC ID: <code>{}</code>"
 
-IF_TEXT = "<b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}"
+IF_TEXT = "<b>Gönderen ID:</b> {}\n<b>Gönderen:</b> {}\n\n{}"
 
-IF_CONTENT = "<b>Message from:</b> {} \n<b>Name:</b> {}"
+IF_CONTENT = "<b>Gönderen ID:</b> {} \n<b>Gönderen:</b> {}"
 
 @bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
@@ -57,30 +57,27 @@ async def start(bot, message):
         parse_mode="html"
     )
     await message.reply_text(
-        text="**Hi {}!**\n".format(message.chat.first_name)+C.START,
+        text="**Merhaba {}!**\n".format(message.chat.first_name)+C.START,
         reply_markup=InlineKeyboardMarkup([
-            [ InlineKeyboardButton(text="🛠SUPPORT🛠", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="📮UPDATES📮", url=f"{C.UPDATE_CHANNEL}")]
+            [ InlineKeyboardButton(text="👋 Discord 👋", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="🌐 Web Site 🌐", url=f"{C.UPDATE_CHANNEL}")]
         ])
     )
 
 
-@bot.on_message(filters.command('help') & filters.private)
+@bot.on_message(filters.command('yardim') & filters.private)
 async def help(bot, message):
     await message.reply_text(
         text=C.HELP,
         reply_markup=InlineKeyboardMarkup([
-            [ InlineKeyboardButton(text="🛠SUPPORT🛠", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="📮UPDATES📮", url=f"{C.UPDATE_CHANNEL}")]
+            [ InlineKeyboardButton(text="👋 Discord 👋", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="🌐 Web Site 🌐", url=f"{C.UPDATE_CHANNEL}")]
         ])
     )
 
 
-@bot.on_message(filters.command('donate') & filters.private)
+@bot.on_message(filters.command('bagis') & filters.private)
 async def donate(bot, message):
     await message.reply_text(
-        text=C.DONATE + "If You Liked This Bot You Can Also Donate Creator through BTC `3AKE4bNwb9TsgaofLQxHAGCR9w2ftwFs2R`",
-        reply_markup=InlineKeyboardMarkup([
-            [ InlineKeyboardButton(text="DONATE", url=f"{donate_link}")]
-        ])
+        text=C.DONATE + "Bi kahve ısmarlamaya ne dersin?\n**Papara: 1474755344**",
     )
 
 
